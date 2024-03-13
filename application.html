@@ -56,10 +56,13 @@
                 display: block;
                 flex: auto;
             }
-            .ans1_img{
-                flex: none;width: 150px;height: 150px;
+            .ans1_imgblock{
+                flex: none;
                 margin: 25px;
                 text-align: center;
+            }
+            .ans1_img{
+                width: 150px;height: 150px;
             }
             p{
                 margin-top: 0.25em;
@@ -86,12 +89,12 @@
                     font-size: 18px;
                 }
                 .ans1{
-                    display: none;
-                }
-                .ans1_mobile{
-                    display: block;
+                    display: grid;
                     font-size: 18px;
                 }
+                .ans1_p{
+                order: 2;
+            }
             }
         </style>
     </head>
@@ -106,16 +109,8 @@
                         <p>我在國小時移居大陸，直至大學畢業，並在大陸的高校實驗室擔任過一年的研究助理，後回台灣發展。我發現台灣生物學系前景並未優於大陸，於是在今年年初決定轉換跑道，學習CS50課程，並已有python基礎。</p>
                         <p>我的性格內向踏實，善於研究問題，喜歡規律的生活。我希望通過這個培訓，培養程序員解決問題的能力，並積累專案經驗。期待能獲得寶貴的學習和成長機會。 </p>
                     </div>
-                    <img class="ans1_img" src="myphoto_1.jpg" />
-                </div>
-                <div class="ans1_mobile">
-                    <div style="width:auto;display:flex;justify-content: center;">
-                    <img class="ans1_img" src="myphoto_1.jpg" />
-                    </div>
-                    <div class="ans1_p">
-                        <p>我叫王孟茹，畢業於南京大學生物科學系。</p>
-                        <p>我在國小時移居大陸，直至大學畢業，並在大陸的高校實驗室擔任過一年的研究助理，後回台灣發展。我發現台灣生物學系前景並未優於大陸，於是在今年年初決定轉換跑道，學習CS50課程，並已有python基礎。</p>
-                        <p>我的性格內向踏實，善於研究問題，喜歡規律的生活。我希望通過這個培訓，培養程序員解決問題的能力，並積累專案經驗。期待能獲得寶貴的學習和成長機會。 </p>
+                    <div class="ans1_imgblock">
+                        <img class="ans1_img" src="myphoto_1.jpg" />
                     </div>
                 </div>
                 <div class="headline">為了成為軟體工程師，做過什麼努力？</div>
@@ -143,7 +138,7 @@
                 <div class="headline">關於這份申請網頁，分享一個開發時的技術心得。</div>
                 <div class="answer">
                     <p>這份申請網頁的開發過程中，我遇到了一些挑戰，發現原來區塊思維並沒有想象中的容易。</p>
-                    <p>在做第一個問題的答案時，因爲插入了一張圖片，我希望它在寬屏下放在右邊，在窄屏下放在文字上方並居中。我參考了線上教學影片RWD回應式設計的内容，但是其中並沒有提到怎麽實現區塊順序的改變，所以我又去查了有沒有可能實現這種版面的參數，但是沒有查到。後來我就想到，乾脆把兩種排版分開寫，雖然可能是個笨辦法，但是最終還是實現了原本的想法。</p>
+                    <p>在做第一個問題的答案時，因爲插入了一張圖片，我希望它在寬屏下放在右邊，在窄屏下放在文字上方並居中。我參考了線上教學影片RWD回應式設計的内容，但是其中並沒有提到怎麽實現區塊順序的改變，所以我就想到，乾脆把兩種排版分開寫，雖然是實現了這個想法，但是後來覺得這不是一個好的設計，因爲每次我想修改這部分文字内容，總是要改兩次。所以我去搜索了有沒有改變順序的參數，費了一番功夫才找到了order參數，總算解決了這個問題。</p>
                     <p>然而，我又遇到第二個問題，圖片放在上方的時候總是靠左，沒辦法居中。我在這裡卡殼了很久，在各個地方增加justify-content和text-align設定，但是都沒有用，在網頁開發者工具裡面一直顯示“The display: block property prevents justify-content from having an effect.”試了好幾次都沒辦法解決。後來我才想到，圖片的區塊大小是固定的，那我在圖片外面再建一個區塊，寬度設置成自動，然後再用justify-content，結果才終於實現了居中。這個過程讓我更深入地理解了RWD回應式設計，以及如何解決實際開發中的問題。</p>
                 </div>
                 <div class="headline">請用簡短兩三句話，描述對你而言，最重要的一項人際交往原則。</div>
